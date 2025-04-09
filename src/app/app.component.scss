@@ -1,0 +1,9 @@
+/* Remove the old header styles */
+header {
+  display: none;
+}
+
+/* Remove the old navigation styles */
+.nav-toggle, .nav-overlay, #navbar {
+  display: none;
+}

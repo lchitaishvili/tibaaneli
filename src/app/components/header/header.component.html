@@ -1,0 +1,38 @@
+<!-- header -->
+<header [class.scrolled]="isScrolled">
+    <div class="header-container">
+        <a routerLink="/" class="logo">
+            <img src="assets/images/logo.png" alt="Tibaaneli logo">
+        </a>
+        
+        <nav class="main-nav">
+            <ul>
+                <li><a routerLink="/about" routerLinkActive="active">Our Story</a></li>
+                <li><a routerLink="/portfolio" routerLinkActive="active">Portfolio</a></li>
+                <li><a routerLink="/blog" routerLinkActive="active">Blog</a></li>
+                <li><a routerLink="/contact" routerLinkActive="active">Contact</a></li>
+            </ul>
+        </nav>
+        
+        <button class="nav-toggle" 
+                (click)="toggleNav()" 
+                aria-controls="mobile-nav" 
+                [attr.aria-expanded]="isNavExpanded">
+            <span class="sr-only">Menu</span>
+            <span class="bar1"></span>
+            <span class="bar2"></span>
+            <span class="bar3"></span>
+        </button>
+    </div>
+</header>
+<!-- mobile navigation -->
+<div class="overlay nav-overlay" [attr.data-visible]="isNavExpanded"></div>
+<nav id="mobile-nav" [attr.data-visible]="isNavExpanded">
+    <ul>
+        <li><a routerLink="/about" routerLinkActive="active">Our Story</a></li>
+        <li><a routerLink="/portfolio" routerLinkActive="active">Portfolio</a></li>
+        <li><a routerLink="/blog" routerLinkActive="active">Blog</a></li>
+        <li><a routerLink="/contact" routerLinkActive="active">Contact</a></li>
+    </ul>
+</nav>
+
