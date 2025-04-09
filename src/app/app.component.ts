@@ -1,15 +1,29 @@
-import { Component } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
-import {HeaderComponent} from "./components/header/header.component";
+import {AfterViewInit, ChangeDetectionStrategy, Component, OnInit} from '@angular/core';
+import {RouterOutlet} from '@angular/router';
 import {FooterComponent} from "./components/footer/footer.component";
+import {changeAttribute, changeClass, delay, getElement} from "./helpers";
+import * as AOS from 'aos';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, HeaderComponent, FooterComponent],
+  imports: [RouterOutlet, FooterComponent],
   templateUrl: './app.component.html',
-  styleUrl: './app.component.scss'
+  styleUrl: './app.component.scss',
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class AppComponent {
+export class AppComponent implements OnInit {
   title = 'tibaaneli';
+
+  ngOnInit() {
+    AOS.init({
+      duration: 800,
+      easing: 'ease-in-sine'
+    });
+
+    const preload = getElement('#preload');
+    window.addEventListener('load', () => {
+      delay(() => changeClass(preload, 'null', 'loaded'), 400);
+    });
+  }
 }
