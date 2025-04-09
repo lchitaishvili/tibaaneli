@@ -1,1 +1,59 @@
-<p>portfolio works!</p>
+<h1 class="txt-center pt-4">Our Wines</h1>
+
+<!-- wine type tabs -->
+<div class="container">
+    <div class="wine-tabs">
+        <button 
+            class="tab-btn" 
+            [class.active]="selectedType === 'ALL'"
+            (click)="filterWines('ALL')">
+            All Wines
+        </button>
+        @for (type of wineTypes; track type) {
+            <button 
+                class="tab-btn" 
+                [class.active]="selectedType === type"
+                (click)="filterWines(type)">
+                {{type}}
+            </button>
+        }
+    </div>
+</div>
+
+<!-- products section -->
+<section class="container grid gtc-3 pbk-2">
+    @for (wine of filteredWines; track wine.id) {
+        <article class="card">
+            <a routerLink="wines/{{wine.id}}" class="img">
+                <img src="assets/images/mockups/{{wine.imgName}}.png" class="mb-2" alt="{{wine.name}}" />
+            </a>
+            <a routerLink="wines/{{wine.id}}">
+                <h2>{{ wine.name }}</h2>
+            </a>
+        </article>
+    }
+</section>
+
+
+<!-- winery section -->
+<section class="bg-light pbk-8" data-aos="fade-up">
+    <div class="container">
+        <div class="grid gap-0">
+            <div class="flex-center bg-white p-10x100" data-aos="fade-down" data-aos-delay="200">
+                <div class="w-100">
+                    <h5>Since 1789</h5>
+                    <h1>Our winery</h1>
+                    <!-- line decoration -->
+                    <span class="title-line"></span>
+                    <p>Consectetur adipisicing elit. Voluptatem in, architecto dolor quisquam error molestias quam perspiciatis quidem, magnam, corporis tempore minima adipisci exercitationem labore molestiae ratione libero istinctio.</p>
+                    <p class="mb-3">Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem in, architecto dolor quisquam error molestias quam perspiciatis quidem, magnam, corporis tempore minima adipisci exercitationem labore molestiae ratione liber distincti enim.</p>
+                    <!-- button -->
+                    <a href="./winery.html" class="btn">Discover now</a>
+                </div>
+            </div>
+
+            <!-- image -->
+            <img src="assets/images/fridge.webp" alt="GrapeLand Winery" data-aos="fade-up" data-aos-delay="300">
+        </div>
+    </div>
+</section>

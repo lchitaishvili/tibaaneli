@@ -1,6 +1,7 @@
-import { Component, HostListener, OnInit } from '@angular/core';
+import {Component, HostListener, inject, OnInit} from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { RouterModule } from '@angular/router';
+import {NavigationEnd, Router, RouterModule} from '@angular/router';
+import {tap} from "rxjs";
 
 @Component({
   selector: 'app-header',
@@ -11,23 +12,18 @@ import { RouterModule } from '@angular/router';
 })
 export class HeaderComponent implements OnInit {
   isNavExpanded = false;
-  isScrolled = false;
+  isHome = true;
 
-  @HostListener('window:scroll')
-  onWindowScroll() {
-    this.isScrolled = window.scrollY > 50;
-  }
-
-  constructor() { }
+  private router = inject(Router);
 
   ngOnInit(): void {
-    // Check initial scroll position
-    this.checkScroll();
-  }
-
-  checkScroll() {
-    // Change background when scrolled more than 50px
-    this.isScrolled = window.scrollY > 50;
+    this.router.events.pipe(
+      tap(event => {
+        if (event instanceof NavigationEnd) {
+          this.isHome = event.url === '/';
+        }
+      })
+    ).subscribe();
   }
 
   toggleNav() {
