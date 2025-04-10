@@ -2,19 +2,19 @@
     <!-- product section -->
     <section class="container pbk-2">
         <div class="grid gap-x3 items-start">
-            <img src="assets/images/mockups/{{ wine.imgName }}.png" alt="GrapeLand wine" data-aos="fade-right" data-aos-delay="250">
+            <img class="negative-margin" src="assets/images/mockups/{{ wine.imgName }}.png" alt="GrapeLand wine" data-aos="fade-right" data-aos-delay="100">
 
             <div class="flex-center">
                 <div class="w-100">
                     <h3 data-aos="fade-down">{{ wine.type }}</h3>
-                    <h1 data-aos="fade-down" data-aos-delay="100">{{ wine.name }}</h1>
+                    <h1 data-aos="fade-down" data-aos-delay="100"  class="mb-1">{{ wine.name }}</h1>
 
-                    <div class="mb-2 flex gap" data-aos="fade-down" data-aos-delay="200">
+                    <div class="mb-1 flex gap" data-aos="fade-down" data-aos-delay="100">
                         <span><b>Type:</b> {{ wine.subtype }}</span>
-                        <span><b>Grape Variety:</b> {{ wine.grape }}</span>
+                        <span><b>Grape:</b> {{ wine.grape }}</span>
                     </div>
 
-                    <p class="mb-2" data-aos="fade-down" data-aos-delay="350">{{ wine.desc }}</p>
+                    <p class="mb-1" data-aos="fade-down" data-aos-delay="100">{{ wine.desc }}</p>
 
                     <div class="grid gap-x3" data-aos="fade-up" data-aos-delay="100">
                         <!-- feature -->
@@ -59,6 +59,34 @@
         </div>
     </section>
 
+    <!-- Detailed Information Sections -->
+    @if (wine.detailedInfo && wine.detailedInfo.length > 0) {
+        <section class="container-xl pbk-2">
+            <div class="detailed-info" data-aos="fade-up" data-aos-delay="100">
+                <div class="grid">
+                    @for (info of wine.detailedInfo; track info.name; let i = $index) {
+                        <div class="info-section">
+                            <div class="info-header" (click)="toggleSection(i)">
+                                <h4>{{ info.name }}</h4>
+                                <i class="fa-solid" [class.fa-chevron-down]="!isExpanded(i)" [class.fa-chevron-up]="isExpanded(i)"></i>
+                            </div>
+                            <div class="info-content" [class.expanded]="isExpanded(i)" data-aos="fade-up">
+                                @if (info.text) {
+                                    <p data-aos="fade-up">{{ info.text }}</p>
+                                }
+                                @if (info.subItems && info.subItems.length > 0) {
+                                    @for (subItem of info.subItems; track subItem.text; let j = $index) {
+                                        <h3 class="mb-0">{{ subItem.name }}</h3>
+                                        <p class="mb-1">{{ subItem.text }}</p>
+                                    }
+                                }
+                            </div>
+                        </div>
+                    }
+                </div>
+            </div>
+        </section>
+    }
 
     <!-- related section -->
 <!--    <section class="container grid gtc-3 pbk-8">-->

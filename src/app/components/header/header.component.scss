@@ -9,7 +9,6 @@ header {
   left: 0;
   width: 100%;
   z-index: 1000;
-  transition: background-color 0.3s ease;
   background-color: transparent;
 
   &.dark {
@@ -37,7 +36,6 @@ header {
   display: flex;
   justify-content: center;
   align-items: center;
-  transition: padding 0.3s ease;
   gap: 80px;
 }
 
@@ -46,8 +44,12 @@ header {
   align-items: center;
   
   img {
-    height: 130px;
+    height: 100px;
     width: auto;
+
+    @media (min-width: 1600px) {
+      height: 130px;
+    }
   }
 }
 
@@ -68,8 +70,7 @@ header {
         font-weight: 700;
         color: var(--white);
         text-decoration: none;
-        transition: color 0.3s ease;
-        
+
         &:hover, &.active {
           color: var(--primary);
         }

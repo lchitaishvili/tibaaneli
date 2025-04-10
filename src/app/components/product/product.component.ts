@@ -14,6 +14,7 @@ import { RouterLink } from '@angular/router';
 })
 export class ProductComponent implements OnInit {
   wine: IWine | undefined;
+  expandedSections: Set<number> = new Set();
 
   constructor(private route: ActivatedRoute) {}
 
@@ -22,5 +23,17 @@ export class ProductComponent implements OnInit {
       const id = Number(params.get('id'));
       this.wine = WINES.find(wine => wine.id === id);
     });
+  }
+
+  toggleSection(index: number): void {
+    if (this.expandedSections.has(index)) {
+      this.expandedSections.delete(index);
+    } else {
+      this.expandedSections.add(index);
+    }
+  }
+
+  isExpanded(index: number): boolean {
+    return this.expandedSections.has(index);
   }
 } 

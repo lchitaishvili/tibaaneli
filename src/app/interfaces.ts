@@ -14,4 +14,11 @@ export interface IWine {
     imgName: string;
     tastingTemp: string;
     desc: string;
+    detailedInfo: IWineDetailedInfo[];
+}
+
+export interface IWineDetailedInfo {
+    name?: string;
+    text?: string;
+    subItems?: IWineDetailedInfo[];
 }

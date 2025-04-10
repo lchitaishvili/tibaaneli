@@ -292,6 +292,11 @@ table td {
 	display: flex;
 	gap: var(--gap);
 }
+.flex-column {
+	display: flex;
+	flex-direction: column;
+	gap: var(--gap);
+}
 .flex-center {
 	display: flex;
 	align-items: center;
