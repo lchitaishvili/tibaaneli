@@ -1,0 +1,102 @@
+@if (wine) {
+    <!-- product section -->
+    <section class="container pbk-2">
+        <div class="grid gap-x3 items-start">
+            <img src="assets/images/mockups/{{ wine.imgName }}.png" alt="GrapeLand wine" data-aos="fade-right" data-aos-delay="250">
+
+            <div class="flex-center">
+                <div class="w-100">
+                    <h3 data-aos="fade-down">{{ wine.type }}</h3>
+                    <h1 data-aos="fade-down" data-aos-delay="100">{{ wine.name }}</h1>
+
+                    <div class="mb-2 flex gap" data-aos="fade-down" data-aos-delay="200">
+                        <span><b>Type:</b> {{ wine.subtype }}</span>
+                        <span><b>Grape Variety:</b> {{ wine.grape }}</span>
+                    </div>
+
+                    <p class="mb-2" data-aos="fade-down" data-aos-delay="350">{{ wine.desc }}</p>
+
+                    <div class="grid gap-x3" data-aos="fade-up" data-aos-delay="100">
+                        <!-- feature -->
+                        <div>
+                            <div class="txt-primary italic mb-1"><i class="fa-solid fa-percent"></i> Alcohol</div>
+                            <hr class="mb-1">
+                            <span>{{ wine.alcohol }}</span>
+                        </div>
+                        <!-- feature -->
+                        <div>
+                            <div class="txt-primary italic mb-1"><i class="fa-solid fa-map-pin"></i> Region </div>
+                            <hr class="mb-1">
+                            <span>{{ wine.region }}</span>
+                        </div>
+                        <!-- feature -->
+                        <div>
+                            <div class="txt-primary italic mb-1"><i class="fa-solid fa-wind"></i> Terroir </div>
+                            <hr class="mb-1">
+                            <span>{{  wine.terroir }}</span>
+                        </div>
+                        <!-- feature -->
+                        <div>
+                            <div class="txt-primary italic mb-1"><i class="fa-solid fa-wine-glass"></i> Winemaking Style</div>
+                            <hr class="mb-1">
+                            <span>{{  wine.style }}</span>
+                        </div>
+                        <!-- feature -->
+                        <div>
+                            <div class="txt-primary italic mb-1"><i class="fa-solid fa-wine-bottle"></i> Vinification </div>
+                            <hr class="mb-1">
+                            <span>{{  wine.vinification }}</span>
+                        </div>
+                        <!-- feature -->
+                        <div>
+                            <div class="txt-primary italic mb-1"><i class="fa-solid fa-temperature-0"></i> Tasting Temperature</div>
+                            <hr class="mb-1">
+                            <span>{{  wine.tastingTemp }}</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- related section -->
+<!--    <section class="container grid gtc-3 pbk-8">-->
+<!--        &lt;!&ndash; title &ndash;&gt;-->
+<!--        <div data-aos="fade-right">-->
+<!--            <h5>Wine bottles</h5>-->
+<!--            <h2>Related product</h2>-->
+<!--            <span class="title-line"></span>-->
+<!--            <p class="mb-2">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Impedit perferendis, recusandae aliquid.</p>-->
+<!--            <a href="./shop.html" class="btn">Explore all</a>-->
+<!--        </div>-->
+
+<!--        &lt;!&ndash; product item &ndash;&gt;-->
+<!--        <article class="card" data-aos="fade-right" data-aos-delay="100">-->
+<!--            <div class="badge">NEW</div>-->
+<!--            <a href="./product.html" class="img">-->
+<!--                <img src="../src/assets/images/wine-2.webp" class="mb-2" alt="GrapeLand Wine" />-->
+<!--            </a>-->
+<!--            <a href="./product.html">-->
+<!--                <h2>2010 Cabernet Pinot</h2>-->
+<!--            </a>-->
+<!--            &lt;!&ndash; <span class="title-line"></span>-->
+<!--            <h5><span class="txt-red txt-linethrough">€ 173,00</span> € 158,00</h5>-->
+<!--            <a href="./cart.html" class="btn">Add to cart</a> &ndash;&gt;-->
+<!--        </article>-->
+
+<!--        &lt;!&ndash; product item &ndash;&gt;-->
+<!--        <article class="card" data-aos="fade-right" data-aos-delay="200">-->
+<!--            <div class="badge">NEW</div>-->
+<!--            <a href="./product.html" class="img">-->
+<!--                <img src="../src/assets/images/wine-3.webp" class="mb-2" alt="GrapeLand Wine" />-->
+<!--            </a>-->
+<!--            <a href="./product.html">-->
+<!--                <h2>2009 Sangiovese</h2>-->
+<!--            </a>-->
+<!--            &lt;!&ndash; <span class="title-line"></span>-->
+<!--            <h5><span class="txt-red txt-linethrough">€ 237,00</span> € 173,00</h5>-->
+<!--            <a href="./cart.html" class="btn">Add to cart</a> &ndash;&gt;-->
+<!--        </article>-->
+<!--    </section>-->
+}

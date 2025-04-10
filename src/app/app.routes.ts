@@ -24,6 +24,10 @@ export const routes: Routes = [
         loadComponent: () => import('./components/blog/blog.component').then(m => m.BlogComponent)
     },
     {
+        path: 'product/:id',
+        loadComponent: () => import('./components/product/product.component').then(m => m.ProductComponent)
+    },
+    {
         path: '**',
         redirectTo: ''
     }

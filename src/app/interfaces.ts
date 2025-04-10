@@ -13,4 +13,5 @@ export interface IWine {
     vinification: string;
     imgName: string;
     tastingTemp: string;
+    desc: string;
 }

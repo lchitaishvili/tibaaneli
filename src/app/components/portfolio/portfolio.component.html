@@ -24,10 +24,10 @@
 <section class="container grid gtc-3 pbk-2">
     @for (wine of filteredWines; track wine.id) {
         <article class="card">
-            <a routerLink="wines/{{wine.id}}" class="img">
+            <a [routerLink]="['/product', wine.id]" class="img">
                 <img src="assets/images/mockups/{{wine.imgName}}.png" class="mb-2" alt="{{wine.name}}" />
             </a>
-            <a routerLink="wines/{{wine.id}}">
+            <a [routerLink]="['/product', wine.id]">
                 <h2>{{ wine.name }}</h2>
             </a>
         </article>

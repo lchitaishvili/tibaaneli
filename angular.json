@@ -29,6 +29,7 @@
             "assets": [
               "src/assets/css",
               "src/assets/fonts",
+              "src/assets/files",
               "src/assets/images",
               {
                 "glob": "**/*",
