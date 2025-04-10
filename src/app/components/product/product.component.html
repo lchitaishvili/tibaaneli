@@ -62,7 +62,7 @@
     <!-- Detailed Information Sections -->
     @if (wine.detailedInfo && wine.detailedInfo.length > 0) {
         <section class="container-xl pbk-2">
-            <div class="detailed-info" data-aos="fade-up" data-aos-delay="100">
+            <div class="detailed-info" data-aos="fade">
                 <div class="grid">
                     @for (info of wine.detailedInfo; track info.name; let i = $index) {
                         <div class="info-section">

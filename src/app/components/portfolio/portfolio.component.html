@@ -1,8 +1,8 @@
-<h1 class="txt-center pt-4">Our Products</h1>
+<h1 class="txt-center pt-2 mb-2">Our Products</h1>
 
 <!-- wine type tabs -->
 <div class="container">
-    <div class="wine-tabs">
+    <div class="wine-tabs mb-2">
         <button 
             class="tab-btn" 
             [class.active]="selectedType === 'ALL'"
@@ -21,19 +21,19 @@
 </div>
 
 <!-- products section -->
-<section class="container grid gtc-3 pbk-2">
+<section class="container grid gtc-3 mb-2" data-aos="fade-right" data-aos-delay="200">
     @for (wine of filteredWines; track wine.id; let i = $index) {
-        <article class="card" data-aos="fade-up" [attr.data-aos-delay]="i * 100">
+        <article class="card">
             <a [routerLink]="['/product', wine.id]" class="img">
                 <img src="assets/images/mockups/{{wine.imgName}}.png" 
-                     class="mb-2 wine-image" 
+                     class="wine-image"
                      loading="lazy"
                      decoding="async"
                      fetchpriority="high"
                      alt="{{wine.name}}" />
             </a>
             <a [routerLink]="['/product', wine.id]">
-                <h2>{{ wine.name }}</h2>
+                <h2 class="mb-0">{{ wine.name }}</h2>
             </a>
         </article>
     }
@@ -41,10 +41,10 @@
 
 
 <!-- winery section -->
-<section class="bg-light pbk-8" data-aos="fade-up">
+<section class="bg-light pbk-8" data-aos="fade">
     <div class="container">
         <div class="grid gap-0">
-            <div class="flex-center bg-white p-10x100" data-aos="fade-down" data-aos-delay="200">
+            <div class="flex-center bg-white p-10x100" data-aos="fade-right" data-aos-delay="200">
                 <div class="w-100">
                     <h5>Since 1789</h5>
                     <h1>Our winery</h1>
@@ -58,14 +58,14 @@
             </div>
 
             <!-- image -->
-            <img src="assets/images/fridge.webp" 
-                 class="winery-image" 
+            <img src="assets/images/fridge.webp"
+                 class="winery-image"
                  loading="lazy"
                  decoding="async"
                  fetchpriority="low"
                  alt="GrapeLand Winery" 
                  data-aos="fade-left" 
-                 data-aos-delay="300">
+                 data-aos-delay="200">
         </div>
     </div>
 </section>
