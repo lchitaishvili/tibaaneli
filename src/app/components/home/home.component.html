@@ -2,9 +2,9 @@
 <section id="heroSlider" class="hero-slider" data-aos="zoom-out" data-aos-delay="200">
     <ul class="hero-bg">
         <!-- slide item -->
-        <li class="bg-img bg-zoom" style="--imgUrl: url('assets/images/slide-1.webp')" data-slide="1"></li>
+        <li class="bg-img bg-zoom" style="--imgUrl: url('assets/images/vineyard-2.jpg')" data-slide="1"></li>
         <!-- slide item -->
-        <li class="bg-img bg-zoom" style="--imgUrl: url('assets/images/vineyard.webp')" data-slide="2" hidden></li>
+        <li class="bg-img bg-zoom" style="--imgUrl: url('assets/images/grapes.webp')" data-slide="2" hidden></li>
         <!-- slide item -->
         <li class="bg-img bg-zoom" style="--imgUrl: url('assets/images/winery.webp')" data-slide="3" hidden></li>
     </ul>
@@ -20,31 +20,31 @@
 <!-- about section -->
 <section class="container pbk-2 grid">
     <!-- image -->
-    <img src="/assets/images/welcome.jpg" alt="GrapeLand Winery" data-aos="fade-down" />
+    <img src="/assets/images/welcome.jpg" alt="GrapeLand Winery" data-aos="fade-right" />
 
-    <div class="flex-center p-5x100">
+    <div class="flex-center p-5x100" data-aos="fade-left">
         <div class="w-100">
             <!-- titles -->
-            <h5 data-aos="fade-up" data-aos-delay="100" class="mb-1">Who we are</h5>
-            <h1 data-aos="fade-up" data-aos-delay="200" class="mb-0">About us</h1>
+            <h5 class="mb-1">Who we are</h5>
+            <h1 class="mb-0">About us</h1>
             <!-- line separator -->
-            <span class="title-line mb-1" data-aos="fade-up" data-aos-delay="100"></span>
+            <span class="title-line mb-1"></span>
             <!-- text -->
-            <p data-aos="fade-down" data-aos-delay="300">In the eastern part of Kakheti, Georgia's most celebrated wine region, lies the picturesque village of Tibaani—a land where winemaking is not just a craft but a way of life. It is here that Tibaaneli Winery was born, carrying the soul of an 8,000-year-old tradition forward into the modern world.
+            <p>In the eastern part of Kakheti, Georgia's most celebrated wine region, lies the picturesque village of Tibaani—a land where winemaking is not just a craft but a way of life. It is here that Tibaaneli Winery was born, carrying the soul of an 8,000-year-old tradition forward into the modern world.
             </p>
-            <p class="mb-3" data-aos="fade-down" data-aos-delay="300">
+            <p class="mb-3">
                 For generations, Georgia has been known as the cradle of wine, a place where ancient winemaking techniques have remained untouched by time. At Tibaaneli, we honor this legacy by preserving the art of traditional Qvevri winemaking while embracing the possibilities of modern innovation. Every bottle we create is not just a drink—it is a testament to history, craftsmanship, and the land that nurtures us.
             </p>
             <!-- button -->
-            <a href="./winery.html" class="btn" data-aos="fade-down" data-aos-delay="400">Discover now</a>
+            <a routerLink="/about" class="btn">More Details</a>
         </div>
     </div>
 </section>
 
 <!-- product section -->
-<section class="bg-light pbk-2" data-aos="fade-up">
+<section class="bg-light pbk-2" data-aos="fade" data-aos-delay="200">
     <div class="container mb-3">
-        <div class="w-50 m-auto txt-center mb-3" data-aos="fade-down" data-aos-delay="100">
+        <div class="w-50 m-auto txt-center mb-3">
             <h5>Discover</h5>
             <h1>Our Products</h1>
             <span class="title-line"></span>
@@ -52,16 +52,16 @@
         </div>
 
         <!-- swiper slider -->
-        <div class="swiper" data-aos="fade-up" data-aos-delay="250">
+        <div class="swiper" data-aos="fade" data-aos-delay="200">
             <!-- swiper slides -->
             <div class="swiper-slide" *ngFor="let wine of wines; let i = index" 
                  [attr.data-slide]="i + 1" 
                  [hidden]="i + 1 !== currentSlide">
-                <div class="swiper-image">
+                <div class="swiper-image" data-aos="fade-right" data-aos-delay="250">
                     <img [src]="'assets/images/mockups/' + wine.imgName + '.png'" [alt]="wine.name">
                 </div>
 
-                <div class="flex-center bg-white p-10x100">
+                <div class="flex-center bg-white p-10x100" data-aos="fade-left" data-aos-delay="250">
                     <div class="w-100">
                         <h3>{{wine.type}}</h3>
                         <h1>{{wine.name}}</h1>
@@ -112,16 +112,16 @@
 <section class="bg-black pbk-8" data-aos="fade-up">
     <div class="container">
         <div class="grid gap-0">
-            <div class="flex-center bg-white p-10x100" data-aos="fade-down" data-aos-delay="100">
+            <div class="flex-center bg-white p-10x100" data-aos="fade-right" data-aos-delay="100">
                 <div class="w-100">
-                    <h5 data-aos="fade-down" data-aos-delay="200">Since 1789</h5>
-                    <h1 data-aos="fade-down" data-aos-delay="300">Our winery</h1>
+                    <h5>Since 2020</h5>
+                    <h1>Our winery</h1>
                     <!-- line decoration -->
-                    <span class="title-line" data-aos="fade-down" data-aos-delay="350"></span>
-                    <p data-aos="fade-down" data-aos-delay="400">Consectetur adipisicing elit. Voluptatem in,
+                    <span class="title-line"></span>
+                    <p>Consectetur adipisicing elit. Voluptatem in,
                         architecto dolor quisquam error molestias quam perspiciatis quidem, magnam, corporis
                         tempore minima adipisci exercitationem labore molestiae ratione libero istinctio.</p>
-                    <p class="mb-3" data-aos="fade-down" data-aos-delay="400">Lorem ipsum dolor sit amet
+                    <p class="mb-3">Lorem ipsum dolor sit amet
                         consectetur adipisicing elit. Voluptatem in, architecto dolor quisquam error molestias
                         quam perspiciatis quidem, magnam, corporis tempore minima adipisci exercitationem labore
                         molestiae ratione liber distincti enim.</p>
@@ -139,19 +139,19 @@
 
 
 <!-- cta section -->
-<section class="bg-img" style="--imgUrl: url('assets/images/vineyard-tree.webp')" data-aos="zoom-out">
-    <div class="container">
-        <!-- box translated -->
-        <div class="bg-white p-10x100 translateY--7" data-aos="fade-up" data-aos-delay="250">
-            <h1>Ancient Vineyards of fine Grapes</h1>
-            <p class="mb-3">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Est quasi officia sit
-                optio sapiente iure quam, nam veniam neque aliquid soluta rem cum, corrupti laboriosam doloribus
-                a deleniti. Neque, dolorem?</p>
-            <!-- button -->
-            <a href="./vineyard.html" class="btn">Discover now</a>
-        </div>
-    </div>
-</section>
+<!--<section class="bg-img" style="&#45;&#45;imgUrl: url('assets/images/vineyard-tree.webp')" data-aos="zoom-out">-->
+<!--    <div class="container">-->
+<!--        &lt;!&ndash; box translated &ndash;&gt;-->
+<!--        <div class="bg-white p-10x100 translateY&#45;&#45;7" data-aos="fade-up" data-aos-delay="250">-->
+<!--            <h1>Ancient Vineyards of fine Grapes</h1>-->
+<!--            <p class="mb-3">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Est quasi officia sit-->
+<!--                optio sapiente iure quam, nam veniam neque aliquid soluta rem cum, corrupti laboriosam doloribus-->
+<!--                a deleniti. Neque, dolorem?</p>-->
+<!--            &lt;!&ndash; button &ndash;&gt;-->
+<!--            <a href="./vineyard.html" class="btn">Discover now</a>-->
+<!--        </div>-->
+<!--    </div>-->
+<!--</section>-->
 
 
 <!-- blog section -->
