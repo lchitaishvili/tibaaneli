@@ -22,10 +22,15 @@
 
 <!-- products section -->
 <section class="container grid gtc-3 pbk-2">
-    @for (wine of filteredWines; track wine.id) {
-        <article class="card">
+    @for (wine of filteredWines; track wine.id; let i = $index) {
+        <article class="card" data-aos="fade-up" [attr.data-aos-delay]="i * 100">
             <a [routerLink]="['/product', wine.id]" class="img">
-                <img src="assets/images/mockups/{{wine.imgName}}.png" class="mb-2" alt="{{wine.name}}" />
+                <img src="assets/images/mockups/{{wine.imgName}}.png" 
+                     class="mb-2 wine-image" 
+                     loading="lazy"
+                     decoding="async"
+                     fetchpriority="high"
+                     alt="{{wine.name}}" />
             </a>
             <a [routerLink]="['/product', wine.id]">
                 <h2>{{ wine.name }}</h2>
@@ -53,7 +58,14 @@
             </div>
 
             <!-- image -->
-            <img src="assets/images/fridge.webp" alt="GrapeLand Winery" data-aos="fade-up" data-aos-delay="300">
+            <img src="assets/images/fridge.webp" 
+                 class="winery-image" 
+                 loading="lazy"
+                 decoding="async"
+                 fetchpriority="low"
+                 alt="GrapeLand Winery" 
+                 data-aos="fade-left" 
+                 data-aos-delay="300">
         </div>
     </div>
 </section>

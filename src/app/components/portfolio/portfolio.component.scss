@@ -26,3 +26,38 @@
         color: var(--white);
     }
 }
+
+.wine-image {
+    width: 100%;
+    max-width: 400px;
+    height: auto;
+    aspect-ratio: 2/3;
+    object-fit: cover;
+    background-color: #f5f5f5; // Light placeholder color while loading
+}
+
+.winery-image {
+    width: 100%;
+    max-width: 800px;
+    height: auto;
+    aspect-ratio: 4/3;
+    object-fit: cover;
+    background-color: #f5f5f5; // Light placeholder color while loading
+}
+
+// Add a subtle loading animation
+@keyframes shimmer {
+    0% {
+        background-position: -200% 0;
+    }
+    100% {
+        background-position: 200% 0;
+    }
+}
+
+.wine-image:not([src]), 
+.winery-image:not([src]) {
+    background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+    background-size: 200% 100%;
+    animation: shimmer 1.5s infinite;
+}

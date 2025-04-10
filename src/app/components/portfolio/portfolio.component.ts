@@ -1,9 +1,9 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import {WINE_TYPES, WINES} from "../../constants";
-import {IWine} from "../../interfaces";
-import {RouterLink} from "@angular/router";
-import {WINE_TYPE} from "../../enums";
+import { WINE_TYPES, WINES } from "../../constants";
+import { IWine } from "../../interfaces";
+import { RouterLink } from "@angular/router";
+import { WINE_TYPE } from "../../enums";
 
 @Component({
   selector: 'app-portfolio',
