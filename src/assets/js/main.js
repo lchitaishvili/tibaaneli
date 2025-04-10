@@ -111,57 +111,57 @@ subMenuLi.forEach(li => {
 /*--------------------------------------------------------
 *	SWIPER
 --------------------------------------------------------*/
-const swiperPrevBtn = getElement('#swiper-previous'),
-		swiperNextBtn = getElement('#swiper-next'),
-		swiperBullets = getAllElements('.swiper-bullets > li'),
-		swiperSlides = getAllElements('.swiper-slide'),
-		dataBullets = 'data-slide-control';
-		
-let curSwiperSlide = getElement('.swiper-bullets > li.active');
-if(curSwiperSlide) {
-	curSwiperSlide = curSwiperSlide.getAttribute(dataBullets)
-}
-
-const showSwiperSlide = e => {
-	const slide = e.target.attributes[dataBullets].nodeValue;
-
-	curSwiperSlide = slide; 
-	
-	swiperSlides.forEach(item => changeAttribute(item, 'hidden', true));
-	swiperBullets.forEach(bullet => changeClass(bullet, 'active', null));
-
-	const setActiveSlide = getElement(`.swiper-slide[data-slide="${CSS.escape(slide)}"]`);
-	const setActiveBullet = getElement(`.swiper-bullets li[${dataBullets}="${CSS.escape(slide)}"]`);
-
-	setActiveSlide.removeAttribute('hidden');
-	changeClass(setActiveBullet, null, 'active');
-}
-
-const swiperControls = e => {
-	const btn = e.target.id;
-
-	if (btn === 'swiper-next') {
-		curSwiperSlide >= swiperSlides.length ? curSwiperSlide = 1 : curSwiperSlide++;
-	} else {
-		curSwiperSlide <= 1 ? curSwiperSlide = swiperSlides.length : curSwiperSlide--;
-	}
-
-	showSwiperSlide({
-		target: {
-			attributes: {
-				[dataBullets]: { nodeValue: curSwiperSlide.toString() }
-			}
-		}
-	});
-}
-
-if(swiperPrevBtn && swiperNextBtn) {
-	swiperPrevBtn.addEventListener('click', swiperControls);
-	swiperNextBtn.addEventListener('click', swiperControls);
-}
-if(swiperBullets) {
-	swiperBullets.forEach(bullet => bullet.addEventListener('click', showSwiperSlide));
-}
+// const swiperPrevBtn = getElement('#swiper-previous'),
+// 		swiperNextBtn = getElement('#swiper-next'),
+// 		swiperBullets = getAllElements('.swiper-bullets > li'),
+// 		swiperSlides = getAllElements('.swiper-slide'),
+// 		dataBullets = 'data-slide-control';
+//
+// let curSwiperSlide = getElement('.swiper-bullets > li.active');
+// if(curSwiperSlide) {
+// 	curSwiperSlide = curSwiperSlide.getAttribute(dataBullets)
+// }
+//
+// const showSwiperSlide = e => {
+// 	const slide = e.target.attributes[dataBullets].nodeValue;
+//
+// 	curSwiperSlide = slide;
+//
+// 	swiperSlides.forEach(item => changeAttribute(item, 'hidden', true));
+// 	swiperBullets.forEach(bullet => changeClass(bullet, 'active', null));
+//
+// 	const setActiveSlide = getElement(`.swiper-slide[data-slide="${CSS.escape(slide)}"]`);
+// 	const setActiveBullet = getElement(`.swiper-bullets li[${dataBullets}="${CSS.escape(slide)}"]`);
+//
+// 	setActiveSlide.removeAttribute('hidden');
+// 	changeClass(setActiveBullet, null, 'active');
+// }
+//
+// const swiperControls = e => {
+// 	const btn = e.target.id;
+//
+// 	if (btn === 'swiper-next') {
+// 		curSwiperSlide >= swiperSlides.length ? curSwiperSlide = 1 : curSwiperSlide++;
+// 	} else {
+// 		curSwiperSlide <= 1 ? curSwiperSlide = swiperSlides.length : curSwiperSlide--;
+// 	}
+//
+// 	showSwiperSlide({
+// 		target: {
+// 			attributes: {
+// 				[dataBullets]: { nodeValue: curSwiperSlide.toString() }
+// 			}
+// 		}
+// 	});
+// }
+//
+// if(swiperPrevBtn && swiperNextBtn) {
+// 	swiperPrevBtn.addEventListener('click', swiperControls);
+// 	swiperNextBtn.addEventListener('click', swiperControls);
+// }
+// if(swiperBullets) {
+// 	swiperBullets.forEach(bullet => bullet.addEventListener('click', showSwiperSlide));
+// }
 
 /*--------------------------------------------------------
 *	FAQ

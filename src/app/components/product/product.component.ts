@@ -3,12 +3,11 @@ import { ActivatedRoute } from '@angular/router';
 import { WINES } from '../../constants';
 import { IWine } from '../../interfaces';
 import { CommonModule } from '@angular/common';
-import { RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-product',
   standalone: true,
-  imports: [CommonModule, RouterLink],
+  imports: [CommonModule],
   templateUrl: './product.component.html',
   styleUrls: ['./product.component.scss']
 })

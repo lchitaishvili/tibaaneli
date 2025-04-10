@@ -12,49 +12,97 @@
     <!-- hero slider content -->
     <div class="hero-content flex-center items-center">
         <div class="overlay"></div>
-        <!-- slider text -->
-        <!-- <h4 class="pt-4">Tibaaneli</h4> -->
-        <h1 class="container txt-center">Wines Produced with Ancient Traditions Handed down for generations</h1>
-
-        <!-- you tube video button activator -->
-<!--        <button class="yt-popup-btn">-->
-<!--            <i class="gg-play-button"></i>-->
-<!--        </button>-->
-<!--        <span>Watch the video</span>-->
-        <!-- you tube pup up -->
-<!--        <div class="yt-popup">-->
-<!--            <div class="yt-popup-content">-->
-<!--                <span class="close-yt-popup">&times;</span>-->
-<!--                &lt;!&ndash; enter the url of your video here &ndash;&gt;-->
-<!--                <iframe src="https://www.youtube.com/embed/JO0hz-q8lwY" allowfullscreen></iframe>-->
-<!--            </div>-->
-<!--        </div>-->
+        <h1 class="container txt-center">Tibaaneli Winery – A Legacy in Every Bottle</h1>
     </div>
 </section>
 
 
 <!-- about section -->
-<section class="container pbk-8 grid">
+<section class="container pbk-2 grid">
     <!-- image -->
     <img src="/assets/images/welcome.jpg" alt="GrapeLand Winery" data-aos="fade-down" />
 
-    <div class="flex-center p-10x100">
+    <div class="flex-center p-5x100">
         <div class="w-100">
             <!-- titles -->
-            <h5 data-aos="fade-up" data-aos-delay="100">Who we are</h5>
-            <h1 data-aos="fade-up" data-aos-delay="200">About us</h1>
+            <h5 data-aos="fade-up" data-aos-delay="100" class="mb-1">Who we are</h5>
+            <h1 data-aos="fade-up" data-aos-delay="200" class="mb-0">About us</h1>
             <!-- line separator -->
-            <span class="title-line" data-aos="fade-up" data-aos-delay="100"></span>
+            <span class="title-line mb-1" data-aos="fade-up" data-aos-delay="100"></span>
             <!-- text -->
-            <p data-aos="fade-down" data-aos-delay="300">Consectetur adipisicing elit. Voluptatem in, architecto
-                dolor quisquam error molestias quam perspiciatis quidem, magnam, corporis tempore minima
-                adipisci exercitationem labore molestiae ratione libero istinctio.</p>
-            <p class="mb-3" data-aos="fade-down" data-aos-delay="300">Lorem ipsum dolor sit amet consectetur
-                adipisicing elit. Voluptatem in, architecto dolor quisquam error molestias quam perspiciatis
-                quidem, magnam, corporis tempore minima adipisci exercitationem labore molestiae ratione liber
-                distincti enim.</p>
+            <p data-aos="fade-down" data-aos-delay="300">In the eastern part of Kakheti, Georgia's most celebrated wine region, lies the picturesque village of Tibaani—a land where winemaking is not just a craft but a way of life. It is here that Tibaaneli Winery was born, carrying the soul of an 8,000-year-old tradition forward into the modern world.
+            </p>
+            <p class="mb-3" data-aos="fade-down" data-aos-delay="300">
+                For generations, Georgia has been known as the cradle of wine, a place where ancient winemaking techniques have remained untouched by time. At Tibaaneli, we honor this legacy by preserving the art of traditional Qvevri winemaking while embracing the possibilities of modern innovation. Every bottle we create is not just a drink—it is a testament to history, craftsmanship, and the land that nurtures us.
+            </p>
             <!-- button -->
             <a href="./winery.html" class="btn" data-aos="fade-down" data-aos-delay="400">Discover now</a>
+        </div>
+    </div>
+</section>
+
+<!-- product section -->
+<section class="bg-light pbk-2" data-aos="fade-up">
+    <div class="container mb-3">
+        <div class="w-50 m-auto txt-center mb-3" data-aos="fade-down" data-aos-delay="100">
+            <h5>Discover</h5>
+            <h1>Our Products</h1>
+            <span class="title-line"></span>
+            <p>A Taste of Georgia's Heritage.</p>
+        </div>
+
+        <!-- swiper slider -->
+        <div class="swiper" data-aos="fade-up" data-aos-delay="250">
+            <!-- swiper slides -->
+            <div class="swiper-slide" *ngFor="let wine of wines; let i = index" 
+                 [attr.data-slide]="i + 1" 
+                 [hidden]="i + 1 !== currentSlide">
+                <div class="swiper-image">
+                    <img [src]="'assets/images/mockups/' + wine.imgName + '.png'" [alt]="wine.name">
+                </div>
+
+                <div class="flex-center bg-white p-10x100">
+                    <div class="w-100">
+                        <h3>{{wine.type}}</h3>
+                        <h1>{{wine.name}}</h1>
+
+                        <ul class="mb-2">
+                            <li><b>Type:</b> {{wine.subtype}}</li>
+                            <li><b>Grape:</b> {{wine.grape}}</li>
+                        </ul>
+
+                        <h3>Description:</h3>
+                        <p class="separator">{{wine.desc}}</p>
+
+                        <a [routerLink]="['/product', wine.id]" class="btn">Details</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- swiper controlls -->
+            <div class="swiper-controls">
+                <svg id="swiper-previous" viewBox="0 0 50 12" role="button" (click)="navigateSlide('prev')">
+                    <path fill-rule="evenodd"
+                          d="M1.922 5.904h48.07v-.966H1.922L6.176.683 5.493 0-.048 5.538l5.541 5.538.683-.683z">
+                    </path>
+                </svg>
+
+                <svg id="swiper-next" viewBox="0 0 50 12" role="button" (click)="navigateSlide('next')">
+                    <path fill-rule="evenodd"
+                          d="M48.078 6.096H.008v.966h48.07l-4.254 4.255.683.683 5.541-5.538L44.507.924l-.683.683z">
+                    </path>
+                </svg>
+            </div>
+
+            <!-- swiper navigation bullet -->
+            <ul class="flex-center flex-wrap gap swiper-bullets">
+                <li *ngFor="let wine of wines; let i = index"
+                    [class.active]="i + 1 === currentSlide"
+                    [attr.data-slide-control]="i + 1"
+                    (click)="showSlide(i + 1)">
+                    {{wine.name}}
+                </li>
+            </ul>
         </div>
     </div>
 </section>
@@ -90,140 +138,6 @@
 </section>
 
 
-<!-- product section -->
-<section class="bg-light pbk-8" data-aos="fade-up">
-    <div class="container mb-3">
-        <div class="w-50 m-auto txt-center mb-3" data-aos="fade-down" data-aos-delay="100">
-            <h5>Discover</h5>
-            <h1>Our Wines</h1>
-            <span class="title-line"></span>
-            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Reprehenderit saepe adipisci, quod
-                laborum.</p>
-        </div>
-
-        <!-- swiper slider -->
-        <div class="swiper" data-aos="fade-up" data-aos-delay="250">
-            <!-- swiper slide -->
-            <div class="swiper-slide" data-slide="1">
-                <div class="swiper-image">
-                    <img src="assets/images/wine-1.webp" alt="GrapeLand wine">
-                </div>
-
-                <div class="flex-center bg-white p-10x100">
-                    <div class="w-100">
-                        <h3>2015</h3>
-                        <h1>Chardonnay</h1>
-
-                        <ul class="mb-2">
-                            <li><b>Denomination:</b> Doc Wine</li>
-                            <li><b>Grape:</b> White</li>
-                        </ul>
-
-                        <h3>Tasting notes:</h3>
-                        <p class="separator">It has an aromatic profile where delicate nuances of vanilla,
-                            butter and hazelnut emerge, accompanied by a refined minerality. In the mouth, it
-                            stands out for its freshness and uniqueness, with a soft structure and a persistent
-                            finish that invites a subsequent sip.</p>
-
-                        <h3>Recommended pairings:</h3>
-                        <p class="mb-3">Excellent with fish-based dishes, such as baked sea bass or a selection
-                            of shellfish, it perfectly enhances the marine notes.</p>
-
-                        <a href="./product.html" class="btn">Discover now</a>
-                    </div>
-                </div>
-            </div>
-
-            <!-- swiper slide -->
-            <div class="swiper-slide" data-slide="2" hidden>
-                <div class="swiper-image">
-                    <img src="assets/images/wine-2.webp" alt="GrapeLand wine">
-                </div>
-
-                <div class="flex-center bg-white p-10x100">
-                    <div class="w-100">
-                        <h3>2010</h3>
-                        <h1>Cabernet Pinot</h1>
-
-                        <ul class="mb-2">
-                            <li><b>Denomination:</b> Doc Wine</li>
-                            <li><b>Grape:</b> Red</li>
-                        </ul>
-
-                        <h3>Tasting notes:</h3>
-                        <p class="separator">Wine that presents itself with an intense red color, with purple
-                            hues. On the nose, it offers a complex bouquet in which aromas of berries, such as
-                            currants and blueberries, intertwine, accompanied by delicate herbaceous notes and
-                            spices. In the mouth it reveals itself to be structured and harmonious, with soft
-                            tannins.</p>
-
-                        <h3>Recommended pairings:</h3>
-                        <p class="mb-3">It pairs perfectly with red meat dishes, such as a succulent grilled
-                            fillet or braised beef with red wine sauce.</p>
-
-                        <a href="./product.html" class="btn">Discover now</a>
-                    </div>
-                </div>
-            </div>
-
-            <!-- swiper slide -->
-            <div class="swiper-slide" data-slide="3" hidden>
-                <div class="swiper-image">
-                    <img src="assets/images/wine-3.webp" alt="GrapeLand wine">
-                </div>
-
-                <div class="flex-center bg-white p-10x100">
-                    <div class="w-100">
-                        <h3>2005</h3>
-                        <h1>Sangiovese</h1>
-
-                        <ul class="mb-2">
-                            <li><b>Denomination:</b> Doc Wine</li>
-                            <li><b>Grape:</b> Red</li>
-                        </ul>
-
-                        <h3>Tasting notes:</h3>
-                        <p class="separator">Red wine of great character, typical of the Italian winemaking
-                            tradition. It has an intense ruby ​​red color, often with garnet reflections in
-                            older wines. On the nose, it offers a complex and fascinating bouquet, with hints of
-                            ripe cherry, plum, and floral notes of violet. On the palate, it is harmonious and
-                            well structured.</p>
-
-                        <h3>Recommended pairings:</h3>
-                        <p class="mb-3">It pairs well with red meats, roast beef, lamb, tomato-based dishes,
-                            pasta or lasagna.</p>
-
-                        <a href="./product.html" class="btn">Discover now</a>
-                    </div>
-                </div>
-            </div>
-
-            <!-- swiper controlls -->
-            <div class="swiper-controls">
-                <svg id="swiper-previous" viewBox="0 0 50 12" role="button">
-                    <path fill-rule="evenodd"
-                          d="M1.922 5.904h48.07v-.966H1.922L6.176.683 5.493 0-.048 5.538l5.541 5.538.683-.683z">
-                    </path>
-                </svg>
-
-                <svg id="swiper-next" viewBox="0 0 50 12" role="button">
-                    <path fill-rule="evenodd"
-                          d="M48.078 6.096H.008v.966h48.07l-4.254 4.255.683.683 5.541-5.538L44.507.924l-.683.683z">
-                    </path>
-                </svg>
-            </div>
-
-            <!-- swiper navigation bullet -->
-            <ul class="flex-center flex-wrap gap swiper-bullets">
-                <li class="active" data-slide-control="1">Chardonnay</li>
-                <li data-slide-control="2">Cabernet Pinot</li>
-                <li data-slide-control="3">Sangiovese</li>
-            </ul>
-        </div>
-    </div>
-</section>
-
-
 <!-- cta section -->
 <section class="bg-img" style="--imgUrl: url('assets/images/vineyard-tree.webp')" data-aos="zoom-out">
     <div class="container">
@@ -241,7 +155,7 @@
 
 
 <!-- blog section -->
-<section class="bg-light pbk-8" data-aos="fade-up">
+<section class="bg-light pbk-2" data-aos="fade-up">
     <div class="container">
         <div class="w-50 m-auto txt-center mb-3" data-aos="fade-down" data-aos-delay="100">
             <h5>Latest posts</h5>
@@ -292,7 +206,7 @@
 
 
 <!-- event section -->
-<section class="bg-black pbk-8" data-aos="fade-up">
+<section class="bg-black pbk-2" data-aos="fade-up">
     <div class="container">
         <div class="grid gap-0">
             <!-- image -->
