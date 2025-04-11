@@ -7,7 +7,7 @@
             class="tab-btn" 
             [class.active]="selectedType === 'ALL'"
             (click)="filterWines('ALL')">
-            All Wines
+            All Types
         </button>
         @for (type of wineTypes; track type) {
             <button 
@@ -42,23 +42,21 @@
 
 <!-- winery section -->
 <section class="bg-light pbk-8" data-aos="fade">
-    <div class="container">
+    <div class="container-xl">
         <div class="grid gap-0">
             <div class="flex-center bg-white p-10x100" data-aos="fade-right" data-aos-delay="200">
                 <div class="w-100">
-                    <h5>Since 1789</h5>
+                    <h5>Since 2023</h5>
                     <h1>Our winery</h1>
                     <!-- line decoration -->
                     <span class="title-line"></span>
-                    <p>Consectetur adipisicing elit. Voluptatem in, architecto dolor quisquam error molestias quam perspiciatis quidem, magnam, corporis tempore minima adipisci exercitationem labore molestiae ratione libero istinctio.</p>
-                    <p class="mb-3">Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem in, architecto dolor quisquam error molestias quam perspiciatis quidem, magnam, corporis tempore minima adipisci exercitationem labore molestiae ratione liber distincti enim.</p>
-                    <!-- button -->
-                    <a href="./winery.html" class="btn">Discover now</a>
+                    <p>At Tibaaneli Winery, we take pride in our vineyard, where we carefully nurture and select the finest grapes. Our vineyard's unique terroir and sustainable farming practices ensure that every grape meets our exacting standards. Our winemakers personally oversee the entire process from vine to bottle.</p>
+                    <p class="mb-3">Our commitment to quality extends throughout our winemaking journey. We combine traditional Georgian winemaking techniques with modern technology to create wines that truly express the character of our land. Every bottle tells a story of our passion for winemaking and our dedication to producing exceptional wines that honor Georgia's rich viticultural heritage.</p>
                 </div>
             </div>
 
             <!-- image -->
-            <img src="assets/images/fridge.webp"
+            <img src="assets/images/vineyard-1.jpg"
                  class="winery-image"
                  loading="lazy"
                  decoding="async"
