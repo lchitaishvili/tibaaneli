@@ -41,7 +41,6 @@
               "node_modules/aos/dist/aos.css"
             ],
             "scripts": [
-              "src/assets/js/main.js",
               "node_modules/aos/dist/aos.js"
             ]
           },
