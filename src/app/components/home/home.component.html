@@ -1,5 +1,5 @@
 <!-- hero slider section -->
-<section id="heroSlider" class="hero-slider" data-aos="zoom-out" data-aos-delay="200">
+<section id="heroSlider" class="hero-slider" data-aos="zoom-out">
     <ul class="hero-bg">
         <!-- slide item -->
         <li class="bg-img bg-zoom" style="--imgUrl: url('assets/images/vineyard-2.jpg')" data-slide="1"></li>
@@ -20,7 +20,7 @@
 <!-- about section -->
 <section class="container pbk-2 grid">
     <!-- image -->
-    <img src="/assets/images/welcome.jpg" alt="GrapeLand Winery" data-aos="fade-right" />
+    <img src="/assets/images/welcome.jpg" alt="Tibaaneli Winery" data-aos="fade-right" />
 
     <div class="flex-center p-5x100" data-aos="fade-left">
         <div class="w-100">
@@ -42,7 +42,7 @@
 </section>
 
 <!-- product section -->
-<section class="bg-light pbk-2" data-aos="fade" data-aos-delay="200">
+<section class="bg-light pbk-2" data-aos="fade">
     <div class="container mb-3">
         <div class="w-50 m-auto txt-center mb-3">
             <h5>Discover</h5>
@@ -52,16 +52,16 @@
         </div>
 
         <!-- swiper slider -->
-        <div class="swiper" data-aos="fade" data-aos-delay="200">
+        <div class="swiper" data-aos="fade">
             <!-- swiper slides -->
             <div class="swiper-slide" *ngFor="let wine of wines; let i = index" 
                  [attr.data-slide]="i + 1" 
                  [hidden]="i + 1 !== currentSlide">
-                <div class="swiper-image" data-aos="fade-right" data-aos-delay="250">
+                <div class="swiper-image" data-aos="fade-right">
                     <img [src]="'assets/images/mockups/' + wine.imgName + '.png'" [alt]="wine.name">
                 </div>
 
-                <div class="flex-center bg-white p-10x100" data-aos="fade-left" data-aos-delay="250">
+                <div class="flex-center bg-white p-10x100" data-aos="fade-left">
                     <div class="w-100">
                         <h3>{{wine.type}}</h3>
                         <h1>{{wine.name}}</h1>
@@ -112,7 +112,7 @@
 <section class="bg-black pbk-8" data-aos="fade-up">
     <div class="container">
         <div class="grid gap-0">
-            <div class="flex-center bg-white p-10x100" data-aos="fade-right" data-aos-delay="100">
+            <div class="flex-center bg-white p-10x100" data-aos="fade-right">
                 <div class="w-100">
                     <h5>Since 2020</h5>
                     <h1>Export Countries</h1>
@@ -125,14 +125,11 @@
                         consectetur adipisicing elit. Voluptatem in, architecto dolor quisquam error molestias
                         quam perspiciatis quidem, magnam, corporis tempore minima adipisci exercitationem labore
                         molestiae ratione liber distincti enim.</p>
-                    <!-- button -->
-                    <a href="./winery.html" class="btn" data-aos="fade-down" data-aos-delay="500">Discover
-                        now</a>
                 </div>
             </div>
 
             <!-- image -->
-            <img src="assets/images/fridge.webp" alt="GrapeLand Winery" data-aos="fade-left" data-aos-delay="250">
+            <img src="assets/images/fridge.webp" alt="Tibaaneli Winery" data-aos="fade-left">
         </div>
     </div>
 </section>
@@ -142,7 +139,7 @@
 <!--<section class="bg-img" style="&#45;&#45;imgUrl: url('assets/images/vineyard-tree.webp')" data-aos="zoom-out">-->
 <!--    <div class="container">-->
 <!--        &lt;!&ndash; box translated &ndash;&gt;-->
-<!--        <div class="bg-white p-10x100 translateY&#45;&#45;7" data-aos="fade-up" data-aos-delay="250">-->
+<!--        <div class="bg-white p-10x100 translateY&#45;&#45;7" data-aos="fade-up">-->
 <!--            <h1>Ancient Vineyards of fine Grapes</h1>-->
 <!--            <p class="mb-3">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Est quasi officia sit-->
 <!--                optio sapiente iure quam, nam veniam neque aliquid soluta rem cum, corrupti laboriosam doloribus-->
@@ -157,7 +154,7 @@
 <!-- blog section -->
 <section class="bg-light pbk-2" data-aos="fade-up">
     <div class="container">
-        <div class="w-50 m-auto txt-center mb-3" data-aos="fade-down" data-aos-delay="100">
+        <div class="w-50 m-auto txt-center mb-3" data-aos="fade-down">
             <h5>Latest posts</h5>
             <h1>Blog</h1>
             <span class="title-line"></span>
@@ -166,9 +163,9 @@
 
         <div class="grid gtc-3">
             <!-- post -->
-            <article class="post" data-aos="fade-right" data-aos-delay="200">
+            <article class="post" data-aos="fade-right">
                 <a href="./post.html">
-                    <img src="assets/images/blog/post-1.webp" alt="GrapeLand Blog post">
+                    <img src="assets/images/blog/post-1.webp" alt="Tibaaneli Blog post">
                 </a>
                 <div class="bg-white p-10x100">
                     <h5 class="txt-primary">17/10/2024</h5>
@@ -178,9 +175,9 @@
             </article>
 
             <!-- post -->
-            <article class="post" data-aos="fade-right" data-aos-delay="300">
+            <article class="post" data-aos="fade-right">
                 <a href="./post.html">
-                    <img src="assets/images/blog/post-2.webp" alt="GrapeLand Blog post">
+                    <img src="assets/images/blog/post-2.webp" alt="Tibaaneli Blog post">
                 </a>
                 <div class="bg-white p-10x100">
                     <h5 class="txt-primary">26/06/2024</h5>
@@ -190,9 +187,9 @@
             </article>
 
             <!-- post -->
-            <article class="post" data-aos="fade-right" data-aos-delay="400">
+            <article class="post" data-aos="fade-right">
                 <a href="./post.html">
-                    <img src="assets/images/blog/post-3.webp" alt="GrapeLand Blog post">
+                    <img src="assets/images/blog/post-3.webp" alt="Tibaaneli Blog post">
                 </a>
                 <div class="bg-white p-10x100">
                     <h5 class="txt-primary">25/04/2024</h5>
@@ -211,9 +208,9 @@
         <div class="grid gap-0">
             <!-- image -->
             <img class="h-100" src="assets/images/brand-shop-2.jpg" alt="Tibaaneli Shop"
-                 data-aos="fade-left" data-aos-delay="100">
+                 data-aos="fade-left">
 
-            <div class="flex-center bg-white p-10x100" data-aos="fade-left" data-aos-delay="200">
+            <div class="flex-center bg-white p-10x100" data-aos="fade-left">
                 <div class="w-100">
                     <h1>Our Special Location in Mtskheta</h1>
                     <span class="title-line"></span>
@@ -231,7 +228,7 @@
 <!--<section class="pln-5x100 pb-8 bg-half" style="&#45;&#45;halfColors: var(&#45;&#45;black) 50%, var(&#45;&#45;light-grey) 50%"-->
 <!--         data-aos="zoom-out">-->
 <!--    <div class="txt-center p-10x100 bg-img" style="&#45;&#45;imgUrl: url('assets/images/experience.webp')">-->
-<!--        <div class="w-50 m-auto bg-white p-10x100" data-aos="zoom-in" data-aos-delay="200">-->
+<!--        <div class="w-50 m-auto bg-white p-10x100" data-aos="zoom-in">-->
 <!--            <div class="txt-center mb-3">-->
 <!--                <h5>Discover</h5>-->
 <!--                <h1>Visit and Events</h1>-->

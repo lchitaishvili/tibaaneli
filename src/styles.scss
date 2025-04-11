@@ -925,46 +925,6 @@ ul.swiper-bullets.swiper-bullets-only li.active::after {
 	transition-duration: 5s;
 }
 
-
-/*-------------------------------------------------------
-*	8. FOOTER
--------------------------------------------------------*/
-footer {
-	padding-inline: 1rem;
-	padding-block: 5rem 2rem;
-	background: var(--black);
-	color: var(--white);
-}
-footer h3 {
-	margin-bottom: calc( var(--gap) * 2 );
-}
-footer h4 {
-	font-family: var(--ff-2);
-}
-footer .logo img {
-	display: block;
-	width: 18rem;
-	margin-bottom: 2rem;
-}
-footer ul.li li {
-	margin-bottom: var(--gap);
-}
-footer button {
-	background-color: var(--primary);
-}
-footer button:hover {
-	background-color: var(--grey);
-}
-footer input {
-	color: var(--white);
-	border-color: rgba(255,255,255, .5);
-}
-footer input:hover,
-footer input:focus {
-	border-color: var(--primary);
-}
-
-
 /*-------------------------------------------------------
 *	11. RESPONSIVE MEDIA QUERIES
 -------------------------------------------------------*/
