@@ -12,22 +12,14 @@ import {changeAttribute, getElement} from "../../helpers";
   templateUrl: './home.component.html',
   styleUrl: './home.component.scss'
 })
-export class HomeComponent implements AfterViewInit, OnDestroy {
-  private productInterval: any;
-  currentSlide = 1;
-  totalSlides = WINES.length;
-  private isAutoAdvancePaused = false;
-  wines: IWine[] = WINES;
+export class HomeComponent implements AfterViewInit {
+  currentProductSlide = 1;
+  totalProductSlides = 3;
+  productSlideItems: IWine[] = WINES.slice(0,3);
 
   ngAfterViewInit() {
     this.initHeroSlider();
-    this.initProductSlider();
-  }
-
-  ngOnDestroy() {
-    if (this.productInterval) {
-      clearInterval(this.productInterval);
-    }
+    this.showProductSlide(1);
   }
 
   private initHeroSlider() {
@@ -47,39 +39,19 @@ export class HomeComponent implements AfterViewInit, OnDestroy {
     }
   }
 
-  private initProductSlider() {
-    // Show first slide initially
-    this.showSlide(1);
-  }
-
-  showSlide(slideNumber: number) {
-    // Update current slide
-    this.currentSlide = slideNumber;
+  showProductSlide(slideNumber: number) {
+    this.currentProductSlide = slideNumber;
   }
 
   navigateSlide(direction: 'prev' | 'next') {
-    let newSlide = this.currentSlide;
+    let newSlide: number;
 
     if (direction === 'next') {
-      newSlide = this.currentSlide >= this.totalSlides ? 1 : this.currentSlide + 1;
+      newSlide = this.currentProductSlide >= this.totalProductSlides ? 1 : this.currentProductSlide + 1;
     } else {
-      newSlide = this.currentSlide <= 1 ? this.totalSlides : this.currentSlide - 1;
+      newSlide = this.currentProductSlide <= 1 ? this.totalProductSlides : this.currentProductSlide - 1;
     }
 
-    this.showSlide(newSlide);
-  }
-
-  private pauseAutoAdvance() {
-    this.isAutoAdvancePaused = true;
-    if (this.productInterval) {
-      clearInterval(this.productInterval);
-      this.productInterval = null;
-    }
-  }
-
-  private startAutoAdvance() {
-    if (!this.isAutoAdvancePaused) {
-      this.productInterval = setInterval(() => this.navigateSlide('next'), 5000);
-    }
+    this.showProductSlide(newSlide);
   }
 }

@@ -54,9 +54,9 @@
         <!-- swiper slider -->
         <div class="swiper" data-aos="fade">
             <!-- swiper slides -->
-            <div class="swiper-slide" *ngFor="let wine of wines; let i = index" 
+            <div class="swiper-slide" *ngFor="let wine of productSlideItems; let i = index"
                  [attr.data-slide]="i + 1" 
-                 [hidden]="i + 1 !== currentSlide">
+                 [hidden]="i + 1 !== currentProductSlide">
                 <div class="swiper-image" data-aos="fade-right">
                     <img [src]="'assets/images/mockups/' + wine.imgName + '.png'" [alt]="wine.name">
                 </div>
@@ -96,11 +96,11 @@
 
             <!-- swiper navigation bullet -->
             <ul class="flex-center flex-wrap gap swiper-bullets">
-                <li *ngFor="let wine of wines; let i = index"
-                    [class.active]="i + 1 === currentSlide"
+                <li *ngFor="let product of productSlideItems; let i = index"
+                    [class.active]="i + 1 === currentProductSlide"
                     [attr.data-slide-control]="i + 1"
-                    (click)="showSlide(i + 1)">
-                    {{wine.name}}
+                    (click)="showProductSlide(i + 1)">
+                    {{product.name}}
                 </li>
             </ul>
         </div>
@@ -108,7 +108,7 @@
 </section>
 
 
-<!-- winery section -->
+<!-- export countries section -->
 <section class="bg-black pbk-8" data-aos="fade-up">
     <div class="container">
         <div class="grid gap-0">
@@ -127,23 +127,6 @@
         </div>
     </div>
 </section>
-
-
-<!-- cta section -->
-<!--<section class="bg-img" style="&#45;&#45;imgUrl: url('assets/images/vineyard-tree.webp')" data-aos="zoom-out">-->
-<!--    <div class="container">-->
-<!--        &lt;!&ndash; box translated &ndash;&gt;-->
-<!--        <div class="bg-white p-10x100 translateY&#45;&#45;7" data-aos="fade-up">-->
-<!--            <h1>Ancient Vineyards of fine Grapes</h1>-->
-<!--            <p class="mb-3">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Est quasi officia sit-->
-<!--                optio sapiente iure quam, nam veniam neque aliquid soluta rem cum, corrupti laboriosam doloribus-->
-<!--                a deleniti. Neque, dolorem?</p>-->
-<!--            &lt;!&ndash; button &ndash;&gt;-->
-<!--            <a href="./vineyard.html" class="btn">Discover now</a>-->
-<!--        </div>-->
-<!--    </div>-->
-<!--</section>-->
-
 
 <!-- blog section -->
 <section class="bg-light pbk-2" data-aos="fade-up">
@@ -196,7 +179,7 @@
 </section>
 
 
-<!-- event section -->
+<!-- location section -->
 <section class="bg-black pbk-2" data-aos="fade-up">
     <div class="container-xl">
         <div class="grid gap-0">
@@ -214,25 +197,3 @@
         </div>
     </div>
 </section>
-
-
-<!-- cta section -->
-<!--<section class="pln-5x100 pb-8 bg-half" style="&#45;&#45;halfColors: var(&#45;&#45;black) 50%, var(&#45;&#45;light-grey) 50%"-->
-<!--         data-aos="zoom-out">-->
-<!--    <div class="txt-center p-10x100 bg-img" style="&#45;&#45;imgUrl: url('assets/images/experience.webp')">-->
-<!--        <div class="w-50 m-auto bg-white p-10x100" data-aos="zoom-in">-->
-<!--            <div class="txt-center mb-3">-->
-<!--                <h5>Discover</h5>-->
-<!--                <h1>Visit and Events</h1>-->
-<!--                <span class="title-line"></span>-->
-<!--                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Cumque sunt sapiente, perspiciatis-->
-<!--                    iste velit nulla corporis rerum! Quos, quia corporis distinctio, doloremque quam in beatae-->
-<!--                    facere incidunt quae, iure necessitatibus.</p>-->
-<!--            </div>-->
-<!--            &lt;!&ndash; button &ndash;&gt;-->
-<!--            <a href="tel:" class="btn mb-2">Book now</a>-->
-<!--            &lt;!&ndash; email &ndash;&gt;-->
-<!--            <p><a href="mailto:your@email.com">{{ 'your@email.com' }}</a></p>-->
-<!--        </div>-->
-<!--    </div>-->
-<!--</section>-->
