@@ -596,7 +596,7 @@ export const WINES: IWine[] = [
         vinification: 'Stainless Steel Tanks',
         imgName: 'saperavi',
         tastingTemp: '16-18°C',
-        desc: '',
+        desc: 'Red dry wine - Saperavi , made from the best bunches of Saperavi grape varieties grown in Kakheti, Tibaani, has a dark purple colour and is distinguished by the aroma of young, black fruits and berries (cherries, blackberries); wine is characterized by well-defined tannins and long endings.',
         detailedInfo: [
             {
                 name: "Vinification",
@@ -718,7 +718,7 @@ export const WINES: IWine[] = [
         vinification: 'Stainless Steel Tanks',
         imgName: 'mukuzani',
         tastingTemp: '16-18°C',
-        desc: '',
+        desc: 'Thee appellation of origin, red dry wine - Mukuzani is made from the Saperavi grapes grown in Kakheti, Mukuzani. Characterized by a dark purple colour. Features strong extracts & a subtle, complex bouquet of ripe cherries, black currants & berries',
         detailedInfo: [
             {
                 name: "Vinification",
@@ -842,7 +842,7 @@ export const WINES: IWine[] = [
         vinification: 'Stainless Steel Tanks',
         imgName: 'kindzmarauli',
         tastingTemp: '12-14°C',
-        desc: '',
+        desc: 'The appellation of Origin, red, semi-sweet wine - Kindzmarauli is made from Saperavi grape variety grown in Kakheti region, Kindzmarauli microzone. Characterized by dark burgundy hue. Distinguished with a well-expressed varietal aroma, cherry and blackberry tones. Has a velvety, harmonious, balanced taste.',
         detailedInfo: [
             {
                 name: "Vinification",
@@ -962,7 +962,7 @@ export const WINES: IWine[] = [
         vinification: 'Stainless Steel Tanks',
         imgName: 'cabernet',
         tastingTemp: '16-18°C',
-        desc: '',
+        desc: 'Red dry Cabernet wine made from a French grape variety, which is grown in Georgia, is characterized by a dark purple hue.',
         detailedInfo: [
             {
                 name: "Vinification",
@@ -1082,7 +1082,7 @@ export const WINES: IWine[] = [
         vinification: 'Stainless Steel Tanks',
         imgName: 'pirosmani-red',
         tastingTemp: '12-14°C',
-        desc: '',
+        desc: 'Red semi-dry wine - Pirosmani , made from the Saperavi grape variety grown in Kakheti, Tibaani. Distinguished by dark pomegranate colour. Characterized by rich variety, sharply expressed red fruit aromas, cherry tones, and pure taste',
         detailedInfo: [
             {
                 name: "Vinification",
@@ -1202,7 +1202,7 @@ export const WINES: IWine[] = [
         vinification: 'Stainless Steel Tanks',
         imgName: 'alazani-valley-red',
         tastingTemp: '12-14°C',
-        desc: '',
+        desc: 'Red semi-sweet wine - Alazani Valley , made from the highest quality red grape variety-Sapervi, grown in Kakheti, Tibaani. Saperavi has a red, raspberry hue. Characterized by red and black fruit aromas and pleasant, velvety, harmonious, sweet taste.',
         detailedInfo: [
             {
                 name: "Vinification",
@@ -1326,7 +1326,7 @@ export const WINES: IWine[] = [
         vinification: 'Stainless Steel Tanks',
         imgName: 'rose',
         tastingTemp: '8-10°C',
-        desc: '',
+        desc: 'Rose coloured semi-dry wine - Rose is made by the classic (European) method. The wine is characterized by a crisp pink color. Distinguished by a pleasantly sour, soft, delicate taste, with aromas of red berries and fruits',
         detailedInfo: [
             {
                 name: "Vinification",
@@ -1450,7 +1450,7 @@ export const WINES: IWine[] = [
         vinification: 'Qvevri',
         imgName: 'rkatsiteli-qvevri',
         tastingTemp: '12-14°C',
-        desc: '',
+        desc: 'White dry wine - Rkatsiteli is made from Rkatsiteli grape variety grown in Kakheti, Tibaani, by Georgian traditional method. wine is characterized by dark straw colour. The aroma of well-known Georgian spices and dried flowers distinguishes it, where tones of dried fruits dominate, which makes the wine harmonious.',
         detailedInfo: [
             {
                 name: "Traditional Winemaking Process",
@@ -1558,7 +1558,7 @@ export const WINES: IWine[] = [
         vinification: 'Qvevri',
         imgName: 'kisi-qvevri',
         tastingTemp: '12-14°C',
-        desc: '',
+        desc: 'White dry wine - Kisi is made from Kisi grape variety grown in Kakheti, Tibaani, by Georgian traditional method. Wine is characterized by a light amber colour. The aromas of sweet, forest fruits and spices distinguish it. A tannin-rich body blends harmoniously with its long end.',
         detailedInfo: [
             {
                 name: "Traditional Winemaking Process",
@@ -1686,7 +1686,7 @@ export const WINES: IWine[] = [
         vinification: 'Qvevri',
         imgName: 'saperavi-qvevri',
         tastingTemp: '16-18°C',
-        desc: '',
+        desc: 'Red dry wine - Saperavi is made from Saperavi grape variety grown in Kakheti, Tibaani, by the Georgian traditional winemaking method. Pomegranate colour is characteristic. Well-defined, strict but harmoniously combined fruit aromas and good taste properties distinguish it.',
         detailedInfo: [
             {
                 name: "Traditional Winemaking Process",
@@ -1818,7 +1818,7 @@ export const WINES: IWine[] = [
         vinification: 'Distillation',
         imgName: 'saperavi-qvevri',
         tastingTemp: '8-10°C',
-        desc: '',
+        desc: 'Famous Georgian grape vodka - Chacha made by the Georgian traditional technology of distilling, has a rich aroma characteristic of grapes and a surprisingly mild taste.',
         detailedInfo: [
             {
                 name: "Vinification",
@@ -1948,7 +1948,7 @@ export const WINES: IWine[] = [
         vinification: 'Distillation (Aged in oak Barrels For 2 years)',
         imgName: 'saperavi-qvevri',
         tastingTemp: '8-10°C',
-        desc: '',
+        desc: 'Famous Georgian grape vodka - Chacha made by the Georgian traditional technology of distilling, stored in oak barrels, has a rich aroma characteristic of grapes and a surprisingly mild taste.',
         detailedInfo: [
             {
                 name: "Vinification",
