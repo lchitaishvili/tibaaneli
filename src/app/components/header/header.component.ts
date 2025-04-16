@@ -21,6 +21,7 @@ export class HeaderComponent implements OnInit {
       tap(event => {
         if (event instanceof NavigationEnd) {
           this.isHome = event.url === '/';
+          this.isNavExpanded = false;
         }
       })
     ).subscribe();
