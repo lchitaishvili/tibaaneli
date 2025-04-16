@@ -1,9 +1,11 @@
 <!-- header -->
 <header [class.dark]="!isHome">
     <div class="header-container">
-        <a routerLink="/" class="logo">
-            <img src="assets/images/logo.png" alt="Tibaaneli logo">
-        </a>
+        @if (!isNavExpanded) {
+            <a routerLink="/" class="logo">
+                <img src="assets/images/logo.png" alt="Tibaaneli logo">
+            </a>
+        }
         
         <nav class="main-nav">
             <ul>
@@ -29,10 +31,11 @@
 <!-- mobile navigation -->
 <div class="overlay nav-overlay" [attr.data-visible]="isNavExpanded"></div>
 <nav id="mobile-nav" [attr.data-visible]="isNavExpanded">
+    <i class="fa fa-close" (click)="toggleNav()"></i>
     <ul>
         <li><a routerLink="/about" routerLinkActive="active">About Us</a></li>
         <li><a routerLink="/portfolio" routerLinkActive="active">Portfolio</a></li>
-        <li><a routerLink="/blog" routerLinkActive="active">Blog</a></li>
+        <!-- <li><a routerLink="/blog" routerLinkActive="active">Blog</a></li> -->
         <li><a routerLink="/contact" routerLinkActive="active">Contact</a></li>
     </ul>
 </nav>
