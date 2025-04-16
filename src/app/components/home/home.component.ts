@@ -1,5 +1,5 @@
 import {AfterViewInit, Component, OnDestroy} from '@angular/core';
-import {WINES} from "../../constants";
+import { FEATURED_PRODUCTS, WINES } from '../../constants';
 import {IWine} from "../../interfaces";
 import {CommonModule} from "@angular/common";
 import {RouterModule} from "@angular/router";
@@ -14,8 +14,7 @@ import {changeAttribute, getElement} from "../../helpers";
 })
 export class HomeComponent implements AfterViewInit {
   currentProductSlide = 1;
-  totalProductSlides = 3;
-  productSlideItems: IWine[] = WINES.slice(0,3);
+  productSlideItems: IWine[] = WINES.filter(wine => FEATURED_PRODUCTS.includes(wine.id)).reverse();
 
   ngAfterViewInit() {
     this.initHeroSlider();
@@ -47,9 +46,9 @@ export class HomeComponent implements AfterViewInit {
     let newSlide: number;
 
     if (direction === 'next') {
-      newSlide = this.currentProductSlide >= this.totalProductSlides ? 1 : this.currentProductSlide + 1;
+      newSlide = this.currentProductSlide >= this.productSlideItems.length ? 1 : this.currentProductSlide + 1;
     } else {
-      newSlide = this.currentProductSlide <= 1 ? this.totalProductSlides : this.currentProductSlide - 1;
+      newSlide = this.currentProductSlide <= 1 ? this.productSlideItems.length : this.currentProductSlide - 1;
     }
 
     this.showProductSlide(newSlide);

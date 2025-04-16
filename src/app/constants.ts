@@ -9,6 +9,16 @@ export const WINE_TYPES: WINE_TYPE[] = [
     WINE_TYPE.CHACHA,
 ];
 
+// Products featured on the home page
+export const FEATURED_PRODUCTS: number[] = [
+  15, // Saperavi Qvevri
+  13, // Rkatsiteli Qvevri
+  8, // Kindzmarauli
+  7, // Mukuzani
+  2, // Kisi
+  3, // Tsinandali
+];
+
 export const WINES: IWine[] = [
     {
         id: 1,
