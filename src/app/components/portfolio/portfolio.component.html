@@ -23,9 +23,9 @@
 <!-- products section -->
 <section class="container grid gtc-3 mb-2" data-aos="fade-right" data-aos-delay="200">
     @for (wine of filteredWines; track wine.id; let i = $index) {
-        <article class="card">
+        <article class="card" data-aos="fade" data-aos-delay="200">
             <a [routerLink]="['/product', wine.id]" class="img">
-                <img src="assets/images/mockups/{{wine.imgName}}.png" 
+                <img src="assets/images/mockups/{{wine.imgName}}.webp"
                      class="wine-image"
                      loading="lazy"
                      decoding="async"
