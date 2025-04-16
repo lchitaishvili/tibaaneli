@@ -27,6 +27,9 @@
             <a [routerLink]="['/product', wine.id]" class="img">
                 <img src="assets/images/mockups/{{wine.imgName}}.webp"
                      class="wine-image"
+                     loading="lazy"
+                     decoding="async"
+                     fetchpriority="high"
                      alt="{{wine.name}}" />
             </a>
             <a [routerLink]="['/product', wine.id]">
