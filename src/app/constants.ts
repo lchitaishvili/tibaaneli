@@ -1826,7 +1826,7 @@ export const WINES: IWine[] = [
         terroir: 'Tibaani Microzone',
         style: 'Georgian Traditional',
         vinification: 'Distillation',
-        imgName: 'saperavi-qvevri',
+        imgName: 'chacha-gold',
         tastingTemp: '8-10°C',
         desc: 'Famous Georgian grape vodka - Chacha made by the Georgian traditional technology of distilling, has a rich aroma characteristic of grapes and a surprisingly mild taste.',
         detailedInfo: [
@@ -1956,7 +1956,7 @@ export const WINES: IWine[] = [
         terroir: 'Tibaani Microzone',
         style: 'Georgian Traditional',
         vinification: 'Distillation (Aged in oak Barrels For 2 years)',
-        imgName: 'saperavi-qvevri',
+        imgName: 'chacha-special',
         tastingTemp: '8-10°C',
         desc: 'Famous Georgian grape vodka - Chacha made by the Georgian traditional technology of distilling, stored in oak barrels, has a rich aroma characteristic of grapes and a surprisingly mild taste.',
         detailedInfo: [
