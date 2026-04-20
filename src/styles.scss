@@ -429,7 +429,7 @@ p-1 {
 	background: linear-gradient( var(--halfColors) );
 }
 .bg-img {
-	background-image: var(--img-url);
+	background-image: var(--imgUrl, var(--img-url));
 	background-position: center;
 	background-repeat: no-repeat;
 	background-size: cover;
@@ -492,17 +492,13 @@ p-1 {
 	min-height: max(42rem, 100vh);
 	position: relative;
 	background-color: var(--primary);
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
 	overflow: hidden;
 }
 .hero-slider h1 {
 	font-size: 1.8rem;
-}
-.hero-slider ul.hero-bg > li {
-	position: absolute;
-	inset: 0;
-	width: 100%;
-	height: 100%;
-	transition: var(--trnst);
 }
 .hero-content {
 	position: absolute;

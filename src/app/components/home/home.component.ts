@@ -1,9 +1,8 @@
-import {AfterViewInit, Component, OnDestroy} from '@angular/core';
+import { Component } from '@angular/core';
 import { FEATURED_PRODUCTS, WINES } from '../../constants';
 import {IWine} from "../../interfaces";
 import {CommonModule} from "@angular/common";
 import {RouterModule} from "@angular/router";
-import {changeAttribute, getElement} from "../../helpers";
 
 @Component({
   selector: 'app-home',
@@ -12,30 +11,23 @@ import {changeAttribute, getElement} from "../../helpers";
   templateUrl: './home.component.html',
   styleUrl: './home.component.scss'
 })
-export class HomeComponent implements AfterViewInit {
+export class HomeComponent {
+  readonly heroSlideImages = [
+    'assets/images/vineyard-2.jpg',
+    'assets/images/grapes.webp',
+    'assets/images/tree.webp'
+  ];
+
+  currentHeroSlide = 0;
   currentProductSlide = 1;
   productSlideItems: IWine[] = WINES.filter(wine => FEATURED_PRODUCTS.includes(wine.id)).reverse();
 
-  ngAfterViewInit() {
-    this.initHeroSlider();
-    this.showProductSlide(1);
-  }
-
-  private initHeroSlider() {
-    const heroSlider = getElement('#heroSlider');
-    if(heroSlider) {
-      const heroBg = getElement('.hero-bg'),
-          heroSlides = heroBg.children.length;
-      let curSlide = 1;
-      const heroPagination = (slide: any) => {
-        heroBg
-            .querySelectorAll('li')
-            .forEach((item: any) => changeAttribute(item, 'hidden', true));
-        getElement(`.hero-bg li[data-slide="${CSS.escape(slide)}"]`).removeAttribute('hidden');
-        curSlide >= heroSlides ? curSlide = 1 : curSlide++;
-      };
-      setInterval(() => heroPagination(curSlide), 4500);
+  onHeroSlideAnimationEnd(slideIndex: number) {
+    if (slideIndex !== this.currentHeroSlide || this.heroSlideImages.length <= 1) {
+      return;
     }
+
+    this.currentHeroSlide = (this.currentHeroSlide + 1) % this.heroSlideImages.length;
   }
 
   showProductSlide(slideNumber: number) {

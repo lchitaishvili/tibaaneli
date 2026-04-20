@@ -1,1 +1,21 @@
+.hero-slide {
+  position: absolute;
+  inset: 0;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  opacity: 0;
+  transform: scale(1.15);
+  transition: opacity .6s ease-in-out;
+}
+
+.hero-slide.active {
+  opacity: 1;
+  animation: heroZoom 4.5s ease-in-out forwards;
+}
+
+@keyframes heroZoom {
+  from { transform: scale(1); }
+  to { transform: scale(1.15); }
+}
 

@@ -1,13 +1,12 @@
 <!-- hero slider section -->
-<section id="heroSlider" class="hero-slider" data-aos="zoom-out">
-    <ul class="hero-bg">
-        <!-- slide item -->
-        <li class="bg-img bg-zoom" style="--imgUrl: url('assets/images/vineyard-2.jpg')" data-slide="1"></li>
-        <!-- slide item -->
-        <li class="bg-img bg-zoom" style="--imgUrl: url('assets/images/grapes.webp')" data-slide="2" hidden></li>
-        <!-- slide item -->
-        <li class="bg-img bg-zoom" style="--imgUrl: url('assets/images/tree.webp')" data-slide="3" hidden></li>
-    </ul>
+<section class="hero-slider" data-aos="zoom-out">
+    <div class="hero-slide"
+         *ngFor="let image of heroSlideImages; let i = index"
+         [class.active]="i === currentHeroSlide"
+         [style.background-image]="'url(' + image + ')'"
+         (animationend)="onHeroSlideAnimationEnd(i)"
+         [attr.aria-hidden]="i !== currentHeroSlide">
+    </div>
 
     <!-- hero slider content -->
     <div class="hero-content flex-center items-center">
