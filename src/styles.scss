@@ -276,7 +276,8 @@ table td {
 }
 #preload.loaded {
 	opacity: 0;
-	visibility: collapse;
+	visibility: hidden;
+	pointer-events: none;
 }
 
 /*-------------------------------------------------------
