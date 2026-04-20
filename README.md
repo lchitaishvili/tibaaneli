@@ -54,6 +54,40 @@ ng e2e
 
 Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
 
+## Compressing large JPEG images
+
+This project includes a macOS-friendly batch image optimizer for `src/assets/images`.
+
+Create optimized copies next to the originals:
+
+```bash
+npm run images:compress
+```
+
+Use custom resize/quality values:
+
+```bash
+npm run images:compress -- --max-width=1600 --quality=65
+```
+
+Write optimized copies into another folder for review:
+
+```bash
+npm run images:compress -- --output-root=/tmp/tibaaneli-images
+```
+
+Replace the original JPEGs in place once you are happy with the output:
+
+```bash
+npm run images:compress:replace -- --max-width=1920 --quality=70
+```
+
+Notes:
+
+- The script only processes `.jpg` and `.jpeg` files.
+- By default it creates sibling files like `vineyard-2.optimized.jpg` so existing app references stay untouched.
+- It uses the built-in macOS `sips` tool, so no extra native image packages are required.
+
 ## Additional Resources
 
 For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
