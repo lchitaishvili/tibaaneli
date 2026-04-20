@@ -10,8 +10,36 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Mulish:wght@400;500;800&family=Prata&display=swap">
     <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <style>
+      #preload {
+        position: fixed;
+        inset: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 1rem;
+        background: #000;
+        z-index: 99999;
+        opacity: 1;
+        visibility: visible;
+        transition: opacity .7s cubic-bezier(0.19, 1, 0.22, 1), visibility .7s cubic-bezier(0.19, 1, 0.22, 1);
+      }
+
+      #preload img {
+        width: min(18rem, 70vw);
+      }
+
+      #preload.loaded {
+        opacity: 0;
+        visibility: hidden;
+        pointer-events: none;
+      }
+    </style>
 </head>
 <body>
+  <div id="preload" aria-hidden="true">
+    <img src="assets/images/logo.png" alt="Tibaaneli logo">
+  </div>
   <app-root></app-root>
 </body>
 </html>
